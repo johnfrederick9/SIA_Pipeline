@@ -1,0 +1,21 @@
+name: Deploy to GitHub Pages
+
+# Define the events that trigger this workflow
+on:
+  push:
+    branches:
+      - main  # Replace with the branch that holds your code
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.SECRET_GITHUB_TOKEN }}
+          publish_dir: ./  # Or ./"the folder name where your static files are located"
