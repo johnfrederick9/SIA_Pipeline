@@ -1,4 +1,3 @@
-// Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import {
   getAuth,
@@ -7,18 +6,16 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA_94-_zyj0zF6VPYXy_IAyG-W5G8v02H0",
-  authDomain: "sia-pipline.firebaseapp.com",
-  projectId: "sia-pipline",
-  storageBucket: "sia-pipline.firebasestorage.app",
-  messagingSenderId: "216169335332",
-  appId: "1:216169335332:web:b236a4ea01a8b9283ea6b1",
-  measurementId: "G-EL1LM2GR2L"
+  apiKey: "AIzaSyDRatUYHxP824i_Fiyit7LoaBdCNJm_bE4",
+  authDomain: "sia-pipeline.firebaseapp.com",
+  projectId: "sia-pipeline",
+  storageBucket: "sia-pipeline.firebasestorage.app",
+  messagingSenderId: "1029300236937",
+  appId: "1:1029300236937:web:983c7fc3ab51380add0c58",
+  measurementId: "G-HRZ03SSTXG"
 };
 
 // Initialize Firebase
@@ -95,7 +92,7 @@ async function sendOtpEmail(recipientName, recipientEmail, otp) {
   };
 
   try {
-    const response = await emailjs.send("service_evq566f", "template_10o7zwy", templateParams);
+    const response = await emailjs.send("SERVICE_EMAILJS", "TEMPLATE_EMAILJS", templateParams);
     console.log(`OTP email sent successfully to: ${recipientEmail}`);
     showMessage("OTP sent to your email. Please verify.", "signInMessage");
     return true; // Indicate success
