@@ -120,6 +120,13 @@ document.getElementById("submitSignIn").addEventListener("click", async (event) 
     showMessage("Please fill out all fields.", "signInMessage");
     return;
   }
+// Admin login condition
+if (email === "Develo4" && password === "develo4@2024") {
+    localStorage.setItem("isAdmin", "true");
+    showMessage("Login successfully as an Admin.", "signInMessage");
+    window.location.href = "admin.html";
+    return;
+  }
 
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
